@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo nothing to do in pre_build stage 
+  build:
+    commands:
+      - echo starting build on `date`
+      - mvn install
+
+artifacts:
+  files:
+    - '**/*.war'
+    - appspec.yml
+discard-paths: yes
