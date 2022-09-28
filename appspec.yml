@@ -1,6 +1,6 @@
 version: 0.0
 os: linux
-hooks:
-  AfterInstall:
-    - location: install.sh
-      runas: root
+files:
+  - source: target/*.war
+    destination: /var/lib/tomcat9/webapps/
+
