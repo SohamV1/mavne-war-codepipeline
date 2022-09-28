@@ -1,6 +1,6 @@
 version: 0.0
 os: linux
 hooks:
-  BeforeInstall:
+  AfterInstall:
     - location: install.sh
       runas: root
