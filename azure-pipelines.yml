@@ -20,6 +20,12 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'tomcat-dev-con'
+    runOptions: 'commands'
+    commands: 'sudo chmod -R ubuntu:ubuntu /opt/tomcat/apache-tomcat-9.0.71/*'
+    readyTimeout: '20000'
 - task: CopyFilesOverSSH@0
   inputs:
     sshEndpoint: 'tomcat-dev-con'
@@ -33,6 +39,6 @@ steps:
     sshEndpoint: 'tomcat-dev-con'
     runOptions: 'commands'
     commands: |
-      #!/bin/bash
+      sudo chmod -R tomcat:tomcat /opt/tomcat/apache-tomcat-9.0.71/*
       sudo systemctl restart tomcat
     readyTimeout: '20000'
