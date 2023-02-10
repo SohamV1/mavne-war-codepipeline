@@ -25,7 +25,7 @@ steps:
     sshEndpoint: 'tomcat-dev-con'
     sourceFolder: '$(Agent.BuildDirectory)/'
     contents: '**/*.war'
-    targetFolder: '/var/lib/tomcat9/webapps/app'
+    targetFolder: '/var/lib/tomcat9/webapps'
     readyTimeout: '20000'
     flattenFolders: true
 - task: SSH@0
