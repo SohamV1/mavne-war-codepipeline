@@ -25,7 +25,7 @@ steps:
     sshEndpoint: 'tomcat-dev-con'
     sourceFolder: '$(Agent.BuildDirectory)/'
     contents: '**/*.war'
-    targetFolder: '/var/lib/tomcat9/webapps'
+    targetFolder: '/opt/tomcat/apache-tomcat-9.0.71/webapps/app'
     readyTimeout: '20000'
     flattenFolders: true
 - task: SSH@0
@@ -34,5 +34,5 @@ steps:
     runOptions: 'commands'
     commands: |
       #!/bin/bash
-      sudo systemctl restart tomcat9.service
+      sudo systemctl restart tomcat
     readyTimeout: '20000'
