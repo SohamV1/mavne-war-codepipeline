@@ -27,7 +27,7 @@ steps:
     contents: '**/*.war'
     targetFolder: '/var/lib/tomcat9/webapps/app'
     readyTimeout: '20000'
-    flattenFolders: true
+    flattenFolders: false
 - task: SSH@0
   inputs:
     sshEndpoint: 'tomcat-dev-con'
